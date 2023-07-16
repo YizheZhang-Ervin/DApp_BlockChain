@@ -1,0 +1,7 @@
+const Voting = artifacts.require("Voting.sol");
+
+module.exports = function (deployer) {
+    deployer.deploy(Voting,
+        ["0x4100000000000000000000000000000000000000000000000000000000000000",
+            "0x4200000000000000000000000000000000000000000000000000000000000000"]);
+};

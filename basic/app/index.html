@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <script type="module">
+            let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545")
+            let account = await web3.eth.requestAccounts()
+            // abi在build下的json文件中，复制进来即可
+            // address中build下的json文件中的networks.address里
+            const xx = await new web3.eth.Contract("xxABI", "xxADDRESS")
+            // 设值
+            xx.methods.addList("b", 200).send({ from: account[0] })
+            // 查值
+            const res = await xx.methods.getList().call()
+            console.log(res)
+        </script>
+    </body>
+
+</html>
