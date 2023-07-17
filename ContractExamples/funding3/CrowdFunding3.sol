@@ -27,7 +27,7 @@ contract Crowdfunding3 {
     // 构造函数
     constructor() {
         // 设置合约拥有者
-        owner = msg.sender;
+        owner = payable(msg.sender);
     }
 
     // 销毁合约
@@ -94,7 +94,7 @@ contract Crowdfunding3 {
 
     // 合约转账到拥有者
     function withdraw() public payable onlyOwner {
-        msg.sender.transfer(address(this).balance);
+        payable(msg.sender).transfer(address(this).balance);
     }
 
     // 查询募资人数量

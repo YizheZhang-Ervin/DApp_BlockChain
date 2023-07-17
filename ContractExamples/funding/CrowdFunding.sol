@@ -21,13 +21,19 @@ contract CrowdFunding {
     mapping(uint => needer) neederMap;
 
     //被赞助人构造
-    function newNeeder(address _neederAddr, uint _goal) {
-        neederAmount++;
-        neederMap[neederAmount] = needer(_neederAddr, _goal, 0, 0); //type mapping can be ignore in constructor
+    function newNeeder(address _neederAddr, uint _goal) public {
+        // neederAmount++;
+        // neederMap[neederAmount] = needer(_neederAddr, _goal, 0, 0); //type mapping can be ignore in constructor
+
+        needer storage n = neederMap[neederAmount++];
+        n.neederAddr = _neederAddr;
+        n.goal = _goal;
+        n.current = 0;
+        n.funderAmount = 0;
     }
 
     //赞助
-    function contribute(address _funderAddr, uint _neederId) payable {
+    function contribute(address _funderAddr, uint _neederId) public payable {
         needer storage _needer = neederMap[_neederId];
         _needer.current += msg.value; //msg is a global variaty
         _needer.funderAmount++;
@@ -38,14 +44,14 @@ contract CrowdFunding {
     }
 
     //judge if the crowdfunding have completed
-    function judgeCompleted(uint _neederId) {
+    function judgeCompleted(uint _neederId) public {
         needer storage _needer = neederMap[_neederId];
         if (_needer.current >= _needer.goal)
-            _needer.neederAddr.transfer(_needer.current);
+            payable(_needer.neederAddr).transfer(_needer.current);
     }
 
     //show the status of a needer
-    function showNeeder(uint _neederId) view returns (uint, uint, uint) {
+    function showNeeder(uint _neederId) public view returns (uint, uint, uint) {
         needer storage _needer = neederMap[_neederId];
         return (_needer.goal, _needer.current, _needer.funderAmount);
     }
