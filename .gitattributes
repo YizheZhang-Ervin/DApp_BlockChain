@@ -1,0 +1,7 @@
+*.md linguist-language=Solidity
+*.json linguist-language=Solidity
+*.sh linguist-language=Solidity
+*.html linguist-language=Solidity
+*.css linguist-language=Solidity
+*.js linguist-language=Solidity
+*.sol linguist-language=Solidity
