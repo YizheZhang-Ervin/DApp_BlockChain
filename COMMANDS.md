@@ -42,4 +42,6 @@ truffle exec .\scripts\test.js
 ## Ganache
 ```
 npm install -g ganache-cli
+
+ganache -d
 ```

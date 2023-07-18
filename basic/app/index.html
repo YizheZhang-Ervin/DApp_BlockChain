@@ -11,12 +11,12 @@
     <body>
         <script type="module">
             let web3 = new Web3(Web3.givenProvider || "ws://localhost:8545")
-            let account = await web3.eth.requestAccounts()
+            let accounts = await web3.eth.requestAccounts()
             // abi在build下的json文件中，复制进来即可
             // address中build下的json文件中的networks.address里
             const xx = await new web3.eth.Contract("xxABI", "xxADDRESS")
             // 设值
-            xx.methods.addList("b", 200).send({ from: account[0] })
+            xx.methods.addList("b", 200).send({ from: accounts[0] })
             // 查值
             const res = await xx.methods.getList().call()
             console.log(res)
