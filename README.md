@@ -29,5 +29,5 @@ DAPP with Web3.js + Solidity + Truffle + Ganache + MetaMask
 
 ## Hyperledger Fabric
 ```
-
+golang + JQ + Fabric + docker + docker compose + git
 ```
