@@ -22,9 +22,14 @@
     - ghost协议
     - casper协议(PoW+PoS，含validator)
 
-## Ethereum
+## Truffle
 ```
 DAPP with Web3.js + Solidity + Truffle + Ganache + MetaMask
+```
+
+## HardHat
+```
+HardHat + ChainlinkCCIP
 ```
 
 ## Hyperledger Fabric
