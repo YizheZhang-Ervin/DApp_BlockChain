@@ -25,14 +25,36 @@
 ## Truffle
 ```
 DAPP with Web3.js + Solidity + Truffle + Ganache + MetaMask
+- fund
+- token
+- voting
 ```
 
 ## HardHat
 ```
 HardHat + ChainlinkCCIP
+- nft跨链
+- dao
+- defi(Aave)
+- erc20
+- fund
+- lottery
+- nft
 ```
 
 ## Hyperledger Fabric
 ```
 golang + JQ + Fabric + docker + docker compose + git
+- marble
+```
+
+## Substrate
+```
+- nodejs
+- parachain
+```
+
+## Corda
+```
+- token
 ```
