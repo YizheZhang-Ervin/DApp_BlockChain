@@ -58,3 +58,20 @@ golang + JQ + Fabric + docker + docker compose + git
 ```
 - token
 ```
+
+## Foundry
+```
+- erc20
+- faucet
+- merkleAirDrop
+```
+
+## NuxtJS前端
+```
+用web3.js
+```
+
+## NextJS前端
+```
+用ethers.js
+```
