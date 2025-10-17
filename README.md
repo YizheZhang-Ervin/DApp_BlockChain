@@ -73,5 +73,5 @@ golang + JQ + Fabric + docker + docker compose + git
 
 ## NextJS前端
 ```
-用ethers.js
+用ethers.js、wagami
 ```
