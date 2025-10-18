@@ -11,8 +11,8 @@
     "reset-indexer": "cd marketplaceIndexer && docker-compose down && docker volume rm marketplaceindexer_postgres_data",
     "indexer": "cd marketplaceIndexer && rindexer start all",
     "test:unit": "vitest",
-    "test:cache": "pnpm synpress",
-    "test:e2e": "pnpm exec playwright test",
+    "test:cache": "npm synpress",
+    "test:e2e": "npm exec playwright test",
     "format": "prettier --write \"src/**/*.{ts,tsx}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx}\""
   },
@@ -39,6 +39,10 @@
     "prettier": "^3.5.3",
     "tailwindcss": "^4",
     "typescript": "^5",
-    "vitest": "^3.0.9"
+    "vitest": "^3.0.9",
+    "esbuild-wasm": "latest"
+  },
+  "overrides": {
+    "esbuild": "npm:esbuild-wasm@latest"
   }
 }

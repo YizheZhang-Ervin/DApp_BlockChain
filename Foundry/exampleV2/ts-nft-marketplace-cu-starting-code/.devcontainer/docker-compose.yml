@@ -1,0 +1,31 @@
+services:
+  devcontainer:
+    build:
+      context: .
+      dockerfile: 'Dockerfile'
+    platform: 'linux/amd64'
+    command: 'sleep infinity'
+    ports:
+      - '${BIND_IP:-127.0.0.1}:${FORWARD_ANVIL_PORT:-8545}:8545'
+      - '${BIND_IP:-127.0.0.1}:${FORWARD_APP_PORT:-3000}:3000'
+      #- '${BIND_IP:-127.0.0.1}:${FORWARD_RINDEXER_PORT:-3001}:3001'
+      #- '${BIND_IP:-127.0.0.1}:${FORWARD_DB_PORT:-5432}:5432'
+    environment:
+      DATABASE_URL: 'postgresql://postgres:${DB_PASSWORD:-rindexer}@127.0.0.1:5432/postgres'
+    volumes:
+      - '../..:/workspaces:cached'
+
+  pgsql:
+    image: 'postgres:16'
+    network_mode: 'service:devcontainer'
+    environment:
+      POSTGRES_PASSWORD: '${DB_PASSWORD:-rindexer}'
+    volumes:
+      - 'pgsql:/var/lib/postgresql/data'
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-q', '-d', '${DB_USER:-root}', '-U', '${DB_PASSWORD:-rindexer}']
+      retries: '3'
+      timeout: '5s'
+
+volumes:
+  pgsql:
