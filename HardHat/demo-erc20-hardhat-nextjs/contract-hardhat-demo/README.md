@@ -1,13 +1,34 @@
-# Sample Hardhat Project
+# Hardhat
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+## Hardhat
+```sh
+# 安装
+mkdir xxProject
+cd xxProject
+npm init
+npm install --save-dev hardhat@2
 
-Try running some of the following tasks:
+# 初始化
+npx hardhat init
 
-```shell
-npx hardhat help
+# 查看命令
+npx hardhat
+
+# 编译
+npx hardhat compile
+
+# 测试
 npx hardhat test
 REPORT_GAS=true npx hardhat test
-npx hardhat node
+
+# 部署
 npx hardhat ignition deploy ./ignition/modules/Lock.js
+npx hardhat ignition deploy ./ignition/modules/Lock.js --network localhost
+
+# 独立运行network
+npx hardhat node
+npx hardhat node --hostname 127.0.0.1 --port 8545
+
+# 帮助
+npx hardhat help
 ```

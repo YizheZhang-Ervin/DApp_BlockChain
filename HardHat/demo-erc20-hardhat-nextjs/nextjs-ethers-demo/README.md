@@ -1,5 +1,11 @@
 # Next.js
 
+## Create
+```sh
+npx create-next-app@latest
+npm i next react-moralis moralis @ethersproject/providers ethers
+```
+
 ## Run
 ```bash
 npm run dev

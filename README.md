@@ -19,7 +19,7 @@ DAPP with Truffle + Ganache + Web3.js
 
 ## HardHat
 ```
-DAPP with HardHat + ChainlinkCCIP + ethers.js
+DAPP with HardHat + ChainlinkCCIP + ethers.js/moralis + web3uikit + graphql + chai/ethereum-waffle/solhint
 - nft跨链
 - dao
 - defi(Aave)
@@ -31,7 +31,7 @@ DAPP with HardHat + ChainlinkCCIP + ethers.js
 
 ## Foundry
 ```
-DAPP with foundry + wagmi/viem/rainbowkit + graphql + synpress
+DAPP with foundry + wagmi/viem + rainbowkit + graphql + synpress + rindexer
 - erc20
 - faucet
 - merkleAirDrop
