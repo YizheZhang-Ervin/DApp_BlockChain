@@ -43,7 +43,8 @@ cd html-ts-coffee-cu
 2. Run the following command:
 
 ```bash
-anvil --load-state fundme-anvil.json 
+anvil --load-state fundme-anvil.json
+anvil --load-state fundme-anvil.json --block-time 5
 ```
 
 This will load a local blockchain with our smart contract already deployed.
@@ -111,7 +112,16 @@ pnpm install
 3. Run the following command:
 
 ```bash
+# 方法1
+## 手动ts编译为js(script用index-ts.js)
+pnpm tsc index-ts.ts
+
+## 直接运行
 pnpm run dev
+
+# 方法2
+## 打包(可以自动编译script引入的ts并运行)
+pnpm vite
 ```
 
 3. Open your browser to whatever the command above says, ie: `http://localhost:5173/`
