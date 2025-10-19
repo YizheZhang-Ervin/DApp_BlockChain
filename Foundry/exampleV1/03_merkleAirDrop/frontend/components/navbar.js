@@ -36,8 +36,8 @@ export default function Navbar() {
           rel="noopener noreferrer"
         >
           <div className="flex items-center space-x-2">
-            <Image src={Bilibili} alt="@lllu_23" width={36} height={36} />
-            <span className="font-wq text-3xl px-4 text-white">@lllu_23</span>
+            <Image src={Bilibili} alt="用户名" width={36} height={36} />
+            <span className="font-wq text-3xl px-4 text-white">用户名</span>
           </div>
         </Link>
         <Link
@@ -46,8 +46,8 @@ export default function Navbar() {
           rel="noopener noreferrer"
         >
           <div className="flex items-center px-4 space-x-2">
-            <Image src={GitHub} alt="@lllu_23" width={36} height={36} />
-            <span className="font-wq text-3xl px-2 text-white">源代码仓库</span>
+            <Image src={GitHub} alt="用户名" width={36} height={36} />
+            <span className="font-wq text-3xl px-2 text-white">用户名</span>
           </div>
         </Link>
       </div>

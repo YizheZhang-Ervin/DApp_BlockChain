@@ -4,7 +4,7 @@
 pragma solidity ^0.8.20;
 // 指定 Solidity 编译器版本。
 
-import "forge-std/Test.sol";
+import {Test} from "forge-std/Test.sol";
 // 导入 Foundry 的测试库，用于提供断言和测试环境控制功能。
 
 import {LuLuCoin} from "../src/LuLuCoin.sol";

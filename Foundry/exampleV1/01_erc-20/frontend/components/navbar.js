@@ -44,31 +44,31 @@ export default function Navbar({ accounts, setAccounts }) {
         <div className="flex">
           {/* 链接到哔哩哔哩个人空间 */}
           <Link
-            href="https://space.bilibili.com/3493288753498847"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
           >
             {/* 图标和文字水平排列 */}
             <div className="flex items-center space-x-2">
               {/* 哔哩哔哩图标 */}
-              <Image src={BiliBili} alt="@lllu_23" width={36} height={36} />
+              <Image src={BiliBili} alt="用户名" width={36} height={36} />
               {/* 显示哔哩哔哩用户名 */}
-              <span className="text-3xl px-4">@lllu_23</span>
+              <span className="text-3xl px-4">用户名</span>
             </div>
           </Link>
 
           {/* 链接到 GitHub 个人仓库 */}
           <Link
-            href="https://github.com/Luboy23"
+            href="/"
             target="_blank"
             rel="noopener noreferrer"
           >
             {/* 图标和文字水平排列 */}
             <div className="flex items-center space-x-2">
               {/* GitHub 图标 */}
-              <Image src={Github} alt="@lllu_23" width={36} height={36} />
+              <Image src={Github} alt="用户名" width={36} height={36} />
               {/* 显示 GitHub 仓库链接描述 */}
-              <span className="text-3xl px-4">@源代码仓库</span>
+              <span className="text-3xl px-4">用户名</span>
             </div>
           </Link>
         </div>
@@ -77,7 +77,7 @@ export default function Navbar({ accounts, setAccounts }) {
         <div className="flex items-center space-x-6 text-2xl">
           {/* 联系作者的链接，点击后通过邮件联系 */}
           <Link
-            href="mailto:lllu238744@gmail.com"
+            href="mailto:a@b.c"
             target="_blank"
             rel="noopener noreferrer"
           >

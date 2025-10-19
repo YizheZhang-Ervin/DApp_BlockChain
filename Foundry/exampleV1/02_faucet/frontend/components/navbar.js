@@ -192,23 +192,23 @@ export default function Navbar() {
       {/* 左侧 - 社交媒体图标 */}
       <div className="flex">
         <Link
-          href="https://space.bilibili.com/3493288753498847"
+          href="/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <div className="flex items-center space-x-2">
-            <Image src={Bilibili} alt="@lllu_23" width={36} height={36} />
-            <span className="font-wq text-3xl px-4 text-white">@lllu_23</span>
+            <Image src={Bilibili} alt="用户名" width={36} height={36} />
+            <span className="font-wq text-3xl px-4 text-white">用户名</span>
           </div>
         </Link>
         <Link
-          href="https://github.com/Luboy23"
+          href="/"
           target="_blank"
           rel="noopener noreferrer"
         >
           <div className="flex items-center px-4 space-x-2">
-            <Image src={GitHub} alt="@lllu_23" width={36} height={36} />
-            <span className="font-wq text-3xl px-2 text-white">源代码仓库</span>
+            <Image src={GitHub} alt="用户名" width={36} height={36} />
+            <span className="font-wq text-3xl px-2 text-white">用户名</span>
           </div>
         </Link>
       </div>
