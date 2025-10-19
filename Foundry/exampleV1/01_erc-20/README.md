@@ -49,9 +49,12 @@
 * 函数选择器
 `forge selectors find`
 
-* 调用`mint`函数
+* 调用`mint`函数:铸币
+source .env
 `cast send ${LLC_CONTRACT} "mint(uint256)" ${AMOUNT} --private-key ${OWNER_PRIVATE_KEY}`
  
 * 查看合约中的代币余额
-` cast call ${LLC_CONTRACT} "balanceOf(address)" ${OWNER_ADDRESS}`
+`cast call ${LLC_CONTRACT} "balanceOf(address)" ${OWNER_ADDRESS}`
 
+* 转换数字
+`cast to-dec 0x0000...`
