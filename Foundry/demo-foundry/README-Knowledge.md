@@ -53,6 +53,12 @@ forge create src/LuLuCoin.sol:LuLuCoin --private-key ${OWNER_PRIVATE_KEY} --broa
 ## 函数选择器
 forge selectors find
 
+## 覆盖率
+forge coverage --report debug > coverage.txt
+
+## debug
+forge test --debug
+
 ## 调用mint函数:铸币
 source .env
 cast send ${LLC_CONTRACT} "mint(uint256)" ${AMOUNT} --private-key ${OWNER_PRIVATE_KEY}
@@ -62,4 +68,14 @@ cast call ${LLC_CONTRACT} "balanceOf(address)" ${OWNER_ADDRESS}
 
 ## 转换数字
 cast to-dec 0x0000...
+
+## 生成头transmissions/headers
+headers xxx
+```
+
+## 测试类型
+```sh
+unit->integrations->forked->staging(主网/测试网)
+
+fuzzing->stateful fuzz->stateless fuzz->formal verification
 ```
