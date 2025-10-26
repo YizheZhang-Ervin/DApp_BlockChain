@@ -55,7 +55,7 @@ contract RwaLending is IERC1155Receiver, OwnerIsCreator, ReentrancyGuard {
     constructor(
         address realEstateTokenAddress,
         address usdc,
-        address usdcUsdAggregatorAddress,   //chainlink daraFeed 地址， 在docks.chain.link网站可以找到
+        address usdcUsdAggregatorAddress,
         uint32 usdcUsdFeedHeartbeat
     ) {
         i_realEstateToken = RealEstateToken(realEstateTokenAddress);

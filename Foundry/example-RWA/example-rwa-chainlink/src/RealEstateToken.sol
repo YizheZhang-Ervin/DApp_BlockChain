@@ -24,7 +24,7 @@ contract RealEstateToken is CrossChainBurnAndMintERC1155, RealEstatePriceDetails
         string memory uri_,
         address ccipRouterAddress,
         address linkTokenAddress,
-        uint64 currentChainSelector,   //chainID
+        uint64 currentChainSelector,
         address functionsRouterAddress
     )
         CrossChainBurnAndMintERC1155(uri_, ccipRouterAddress, linkTokenAddress, currentChainSelector)

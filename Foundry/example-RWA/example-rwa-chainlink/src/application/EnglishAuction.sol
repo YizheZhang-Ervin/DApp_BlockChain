@@ -40,7 +40,6 @@ contract EnglishAuction is IERC1155Receiver, ReentrancyGuard {
         i_fractionalizedRealEstateToken = fractionalizedRealEstateTokenAddress;
     }
 
-// startingBid-- avax 10 == 10000000000000000000 （10^18）
     function startAuction(uint256 tokenId, uint256 amount, bytes calldata data, uint256 startingBid)
         external
         nonReentrant
