@@ -60,8 +60,6 @@ golang + JQ + Fabric + docker + docker compose + git
 - token
 ```
 
-
-
 ## 全栈（ssr前端用nextjs,nuxtjs）
 ```
 - nuxtjs/nextjs
@@ -89,3 +87,28 @@ golang + JQ + Fabric + docker + docker compose + git
     - 智能合约
     - ghost协议
     - casper协议(PoW+PoS，含validator)
+
+## 区块链类型
+```sh
+# 私链/联盟链
+- Hyperledger Fabric / Besu
+- FISCO BCOS
+- GoQuorum
+- Corda
+- 长安链
+- Chain Core
+
+# 兼容EVM
+- Foundry
+- Hardhat
+- Truffle/Ganache
+- Geth
+- Polygon Edge
+- Avalanche Subnet
+
+# 其他公链
+- Solana
+- Cosmos SDK
+- Cardano
+- 树图链
+```
