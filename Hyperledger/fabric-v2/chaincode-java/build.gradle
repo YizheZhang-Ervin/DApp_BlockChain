@@ -1,0 +1,97 @@
+/*
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'application'
+    id 'checkstyle'
+    id 'jacoco'
+}
+
+group 'org.hyperledger.fabric.samples'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    implementation 'org.hyperledger.fabric-chaincode-java:fabric-chaincode-shim:2.5.+'
+    implementation 'org.json:json:+'
+    implementation 'com.owlike:genson:1.6'
+    testImplementation platform('org.junit:junit-bom:5.14.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testImplementation 'org.assertj:assertj-core:3.27.6'
+    testImplementation 'org.mockito:mockito-core:5.20.0'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+repositories {
+    // 阿里云中央仓库镜像（优先）
+    maven { url 'https://maven.aliyun.com/repository/public/' }
+    // 阿里云JitPack镜像（适配你原有jitpack.io的依赖）
+    maven { url 'https://maven.aliyun.com/repository/jitpack/' }
+    // 兜底：官方中央仓库（镜像不可用时备用）
+    mavenCentral()
+    // 移除原有单独的jitpack.io配置，已整合到阿里云镜像
+}
+
+compileJava {
+    // 替换 --release 语法，改用兼容Gradle 7.6.6的JDK 11编译配置
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+    // 强制指定编译器参数，避免环境兼容问题
+    options.compilerArgs += ['-source', '11', '-target', '11']
+}
+
+application {
+    mainClass = 'org.hyperledger.fabric.contract.ContractRouter'
+}
+
+checkstyle {
+    toolVersion '8.21'
+    configFile file("config/checkstyle/checkstyle.xml")
+}
+
+checkstyleMain {
+    source = 'src/main/java'
+}
+
+checkstyleTest {
+    source = 'src/test/java'
+}
+
+jacocoTestReport {
+    dependsOn test
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.9
+            }
+        }
+    }
+    finalizedBy jacocoTestReport
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+}
+
+shadowJar {
+    archiveBaseName = 'chaincode'
+    archiveVersion = ''
+    archiveClassifier = ''
+
+    duplicatesStrategy = DuplicatesStrategy.INCLUDE
+    mergeServiceFiles()
+
+    manifest {
+        attributes 'Main-Class': 'org.hyperledger.fabric.contract.ContractRouter'
+    }
+}
+
+check.dependsOn jacocoTestCoverageVerification
+installDist.dependsOn check
